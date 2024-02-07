@@ -1,2 +1,2 @@
 # BookMyDoctor
-BookMyDoctor is Website that provide services to book appointment to Doctors or particular hospitals by patients.
+BookMyDoctor is Website that provide services to book appointment to Doctors or particular hospitals.
