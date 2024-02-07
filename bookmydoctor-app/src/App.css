@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap');
+
+body{
+  background-color: #eff7fa;
+  font-family: 'Poppins', sans-serif;
+}
+
+main img{
+  height: 460px;
+  width: 480px;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.register-container{
+  width: 600px;
+}
+
+form {
+  
+  margin-top: 15px;
+}
+
+label, input {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+#register_button{
+  margin: 25px auto;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+nav{
+  background-color: #add8e6;
+  padding: 12px 24px;
+}
+
+ul{
+  list-style: none;
+
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: flex-end;
+
+  font-size: 24px;
+}
+
+
+
+nav a{
+  color: white;
+}
+
+nav a:hover{
+  cursor: pointer;
+  color: blanchedalmond;
+}
+
+.logo-text{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: whitesmoke;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button{
+  background-color: #344145;
+  padding: 8px 24px;
+  font-size: 18px;
+  color: white;
+  border: 2px solid #344145;
+  border-radius: 12px;
+}
+
+button:hover{
+  color: #344145;
+  border: 2px solid #344145;
+  background-color: #eff7fa;
+}
+
+
+.registration-container label{
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.doc-image{
+  height: 400px;
+  width: 400px;
+}
+
+.wrapper{
+  max-width: 700px;
+  padding: 12px 100px;
+  background-color: #344145;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+
+margin-top: 60px;
+}
+
+.login-container h1{
+  color: whitesmoke;
+}
+
+
+#login-form{
+  color: whitesmoke;
+  display: flex;
+}
+
+#login-btn{
+  background-color: whitesmoke;
+  color: #344145;
+  width: 120px;
+  border: 2px solid whitesmoke;
+  align-self: center;
+}
+
+#login-btn:hover{
+  background-color: #344145;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+
+}
+/* Add this CSS in your stylesheet or style tag */
+.error-message {
+  color: red;
+}
+
+.input-error {
+  border: 1px solid red;
+}
+.server-error-message {
+  color: red;
+  margin-top: 10px;
+}
