@@ -121,40 +121,40 @@ body {
     margin-top: 20px;
 }
 
-.footer {
+footer {
 background-color: #343a40;
 color: #ffffff;
 }
 
-.footer h4 {
+footer h4 {
 color: #ffffff;
 }
 
-.footer p {
+footer p {
 color: #aaaaaa;
 }
 
-.footer a {
+footer a {
 color: #ffffff;
 }
 
-.footer a:hover {
+footer a:hover {
 color: #28a745; /* Change the color on hover */
 }
 
-.footer .social-icons a {
+footer .social-icons a {
 font-size: 24px;
 margin-right: 15px;
 color: #ffffff;
 }
 
-.footer hr {
+footer hr {
 background-color: #ffffff;
 margin-top: 0;
 margin-bottom: 0;
 }
 
-.footer p.text-center {
+footer p.text-center {
 margin-bottom: 0;
 }
 

@@ -29,6 +29,7 @@ function Login() {
         },
       });
       console.log('User logged in:', data.loginUser);
+       
     } catch (error) {
       if (error.graphQLErrors) {
         console.error('GraphQL Errors:', error.graphQLErrors);

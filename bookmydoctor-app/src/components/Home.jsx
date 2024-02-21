@@ -1,10 +1,11 @@
 import React from 'react';
 import { useQuery,gql } from '@apollo/client';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../home.css'; // Import your CSS file
 
 const GET_DOCTORS = gql`
   query {
-    getDoctors {
+    doctors {
       _id
       firstName
       lastName
@@ -16,7 +17,7 @@ const GET_DOCTORS = gql`
 
 function Home() {
     const{loading, error, data} = useQuery(GET_DOCTORS) 
-    console.log(data);
+    //console.log(data);
     const toggleAnswer = (id) => {
         const answer = document.getElementById('faq-answer-' + id);
         const toggleIcon = document.querySelector('.faq-question[data-id="' + id + '"] .faq-toggle');
@@ -25,14 +26,14 @@ function Home() {
             toggleIcon.textContent = '+';
         } else {
             answer.style.display = 'block';
-            toggleIcon.textContent = '-';
+            toggleIcon.textContent = '-'; 
         }
     };
 
     return (
         <div>
             {/* Navigation Bar */}
-            <nav className="navbar navbar-expand-lg navbar-dark">
+            {/* <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container">
                     <a className="navbar-brand" href="#">BookMyDoctor</a>
                     <div className="navbar-collapse" id="navbarNav">
@@ -56,7 +57,7 @@ function Home() {
                         <a href="#"><i className="fas fa-user-plus"></i>  Register</a>
                     </div>
                 </div>
-            </nav>
+            </nav> */}
 
             {/* Banner Section */}
             <div className="banner">
@@ -72,32 +73,16 @@ function Home() {
             <div className="container mt-5">
                 <div className="row">
                     {/* Add doctor profiles here */}
-                    <div className="col-md-4">
+                    {data?.doctors.map((doctor)=>(
+                    <div className="col-md-4" key={doctor._id}>
                         <div className="card">
                             <img src="doctor_1.jpg" alt="Doctor 1" />
-                            <h3>Dr. John Doe 1</h3>
-                            <p>Specialist in Cardiology</p>
+                            <h3>{doctor.firstName}{doctor.lastName}</h3>
+                            <p>Specialist in {doctor.specialization}</p>
                             <button className="card-btn">Know More</button>
                         </div>
                     </div>
-
-                    <div className="col-md-4">
-                        <div className="card">
-                            <img src="doctor_1.jpg" alt="Doctor 2" />
-                            <h3>Dr. John Doe 2</h3>
-                            <p>Specialist in Cardiology</p>
-                            <button className="card-btn">Know More</button>
-                        </div>
-                    </div>
-
-                    <div className="col-md-4">
-                        <div className="card">
-                            <img src="doctor_1.jpg" alt="Doctor 3" />
-                            <h3>Dr. John Doe 3</h3>
-                            <p>Specialist in Cardiology</p>
-                            <button className="card-btn">Know More</button>
-                        </div>
-                    </div>
+                    ))}
                 </div>
                 <div className="find-more-container">
                     <a href="#" className="btn btn-info">Find More</a>
