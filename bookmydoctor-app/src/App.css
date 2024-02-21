@@ -69,28 +69,6 @@ ul{
   font-size: 24px;
 }
 
-
-
-nav a{
-  color: white;
-}
-
-nav a:hover{
-  cursor: pointer;
-  color: blanchedalmond;
-}
-
-.logo-text{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: whitesmoke;
-}
-
-nav{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 button{
   background-color: #344145;
   padding: 8px 24px;
@@ -163,4 +141,26 @@ margin-top: 60px;
 .server-error-message {
   color: red;
   margin-top: 10px;
+}
+
+nav{
+  a{
+    text-decoration: none;
+  }
+}
+
+
+nav{
+  color: red;
+}
+.small-list-item {
+  font-size: 12px; /* Adjust the size according to your preference */
+}
+
+main{
+  margin-bottom: 20px;
+  padding: 15px;
+}
+#login-btn{
+  margin:20px;
 }

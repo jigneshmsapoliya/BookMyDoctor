@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { gql } from 'graphql-tag';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 const LOGIN_USER = gql`
@@ -16,6 +17,9 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // to navigate to other page
+  const navigate = useNavigate();
+
   const [loginUser] = useMutation(LOGIN_USER);
 
   const handleLogin = async () => {
@@ -26,7 +30,10 @@ function Login() {
           password,
         },
       });
+
+      
       console.log('User logged in:', data.loginUser);
+      navigate('/');
     } catch (error) {
       if (error.graphQLErrors) {
         console.error('GraphQL Errors:', error.graphQLErrors);
