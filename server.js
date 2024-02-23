@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0.n5ukthb.mongodb.net/doctorappointment', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+mongoose.connect('mongodb+srv://jmsapoliya:Naruto007@cluster0.6rhwk1w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+dbName:'doctorAppointment',  
+//useNewUrlParser: true,
+  //useUnifiedTopology: true,
 });
 
 const User = require('./bookmydoctor-app/models/User.js'); 
+const Doctor = require('./bookmydoctor-app/models/DoctorModel.js');
 
 const typeDefs = gql`
   type User {
@@ -26,6 +28,7 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
+    doctors: [Doctor]
   }
 
   type Mutation {
@@ -41,6 +44,33 @@ const typeDefs = gql`
 
     loginUser(email: String!, password: String!): User
   }
+
+  type Doctor {
+    _id: ID!
+    firstName: String!
+    lastName: String!
+    specialization: String!
+    hospitalAffiliation: String
+    experience: Int!
+    education: [String!]!
+    insuranceAccepted: [String!]!
+    rating: Float
+    reviews: [Review!]
+    location: Location!
+  }
+  
+  type Review {
+    id: String
+    rating: Int!
+    feedback: String!
+  }
+  
+  type Location {
+    address: String!
+    city: String!
+    state: String!
+    country: String!
+  }
 `;
 
 const resolvers = {
@@ -49,6 +79,10 @@ const resolvers = {
       const users = await User.find();
       return users;
     },
+    doctors: async ()=>{
+      const doctors = await Doctor.find();
+      return doctors;
+    }
   },
   Mutation: {
     registerUser: async (_, args) => {

@@ -1,6 +1,18 @@
 import React from 'react';
+import { useQuery,gql } from '@apollo/client';
 import '../HomeComponent.css'; 
 import '../HomeComponent.js'; 
+
+const GET_DOCTORS = gql`
+  query {
+    doctors {
+      _id
+      firstName
+      lastName
+      specialization
+    }
+  }
+`;
 
 const toggleAnswer = (id) => {
     var answer = document.getElementById(`faq-answer-${id}`);
@@ -20,6 +32,9 @@ const toggleAnswer = (id) => {
   };
   
 const HomeComponent = () => {
+
+  const{loading, error, data} = useQuery(GET_DOCTORS) 
+
   return (
     <div>
     
@@ -38,16 +53,18 @@ const HomeComponent = () => {
      
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <img src="doctor_1.jpg" alt="Doctor 1" />
-        <h3>Dr. John Doe</h3>
-        <p>Specialist in Cardiology</p>
-        <button class="card-btn">Know More</button>
-      </div>
-    </div>
+  {data?.doctors.map((doctor)=>(
+                    <div className="col-md-4" key={doctor._id}>
+                        <div className="card">
+                            <img src="doctor_1.jpg" alt="Doctor 1" />
+                            <h3>{doctor.firstName}{doctor.lastName}</h3>
+                            <p>Specialist in {doctor.specialization}</p>
+                            <button className="card-btn">Know More</button>
+                        </div>
+                    </div>
+                    ))}
 
-    <div class="col-md-4">
+    {/* <div class="col-md-4">
       <div class="card">
         <img src="doctor_1.jpg" alt="Doctor 2" />
         <h3>Dr. Elise Nobel</h3>
@@ -63,7 +80,7 @@ const HomeComponent = () => {
         <p>Specialist in Dermatology</p>
         <button class="card-btn">Know More</button>
       </div>
-    </div>
+    </div> */}
    
   </div>
 
