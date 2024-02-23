@@ -114,7 +114,7 @@ const doctorsData = [
                 value={searchTerm}
                 onChange={handleChange}
               />
-              <Button variant="outline-primary">Search</Button>
+              {/* <Button variant="outline-primary">Search</Button> */}
             </Form>
           </Col>
         </Row>
