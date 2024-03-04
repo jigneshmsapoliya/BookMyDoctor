@@ -1,0 +1,65 @@
+/* Services.css */
+
+.faq-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .faq-card-header {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .faq-card-header:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .faq-card-body {
+    padding: 15px;
+  }
+  
+  .btn-sm {
+    margin-left: 10px;
+    padding: 2px 10px;
+    float: right;
+  }
+  
+  .bg-primary {
+    background-color: white;
+  }
+  
+  .text-white {
+    color: blue;
+  }
+  
+  /* Add more styles for different background and text colors as needed */
+  
+  .faqs-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .mb-4 {
+    margin-bottom: 20px;
+  }
+  
+  .mt-5 {
+    margin-top: 50px;
+  }
+  
+  .faq-card-header{
+    display: flex;
+    justify-content: space-around;
+  }
+  button{
+    background-color: black;
+    color: #ddd;
+  }

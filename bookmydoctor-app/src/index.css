@@ -14,7 +14,18 @@ code {
 
 nav{
   background-color: lightblue;
+  display: flex;
+  justify-content: space-between;
 }
 
+@media (max-width: 600px) {
+  nav{
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul{
+    display: inline;
+  }
+}
 
 
