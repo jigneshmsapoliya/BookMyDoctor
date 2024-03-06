@@ -53,6 +53,9 @@ const doctorSchema = new mongoose.Schema({
           country: String 
         },
         required: true 
+      },
+      imgUrl : {
+        type : String,
       }
 });
 

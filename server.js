@@ -57,6 +57,7 @@ const typeDefs = gql`
     rating: Float
     reviews: [Review!]
     location: Location!
+    imgUrl : String
   }
   
   type Review {
