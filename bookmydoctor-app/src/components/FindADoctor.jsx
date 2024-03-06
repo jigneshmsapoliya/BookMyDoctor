@@ -115,7 +115,8 @@ const GET_DOCTORS = gql`
   
     const filteredDoctors = data?.doctors?.filter((doctor) =>
     doctor.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    doctor.lastName.toLowerCase().includes(searchTerm.toLowerCase())
+    doctor.lastName.toLowerCase().includes(searchTerm.toLowerCase())  ||
+    doctor.specialization.toLowerCase().includes(searchTerm.toLowerCase())
     );
   
     return (
