@@ -38,6 +38,7 @@ const HomeComponent = () => {
       </div>
 
       <div class="container mt-5">
+      <h1 class="display-4 mt-4 mb-4">Meet Our Expert</h1>
         <div class="row">
           {data?.doctors.slice(0, 3).map((doctor) => (
             <div className="col-md-4" key={doctor._id}>

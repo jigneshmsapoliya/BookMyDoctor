@@ -107,8 +107,8 @@ body {
     margin-bottom: 15px;
 }
 .card-btn {
-    background-color: #007bff;
-    color: #ffffff;
+    background-color: white;
+    color: black;
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
@@ -213,4 +213,8 @@ margin-bottom: 0;
     display: none;
     margin-top: 10px;
     font-size: 1em;
+}
+.row div div{
+    border-radius: 20px;
+    background-color: #309AC9;
 }
