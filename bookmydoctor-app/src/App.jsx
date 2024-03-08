@@ -6,6 +6,7 @@ import HomeComponent from './components/HomeComponent';
 import Services from './components/Services'; 
 import FindADoctor from './components/FindADoctor';
 import Footer from './components/Footer';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
 
 function Navigation() {
