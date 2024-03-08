@@ -16,6 +16,7 @@ nav{
   background-color: lightblue;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .list-inline {
   padding-left: 0;

@@ -12,26 +12,31 @@ import './index.css';
 function Navigation() {
   return (
     <Router>
-      <nav>
-        <h1 className='logo-text'><a href="/">BookMyDoctor</a></h1>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/services">Services</Link>
-          </li>
-          <li>
-            <Link to="/findadoctor">Find a Doctor</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-      </nav>
+      <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: '#37DAE5' }}>
+  <a className="navbar-brand" href="/">BookMyDoctor</a>
+  
+  <ul className="navbar-nav mx-auto">
+    <li className="nav-item">
+      <a className="nav-link" href="/">Home</a>
+    </li>
+    <li className="nav-item">
+      <a className="nav-link" href="/services">Services</a>
+    </li>
+    <li className="nav-item">
+      <a className="nav-link" href="/findadoctor">Find a Doctor</a>
+    </li>
+    
+  </ul>
+  <div className="navbar-nav ml-auto ml-3">
+    <li className="nav-item">
+      <a className="nav-link" href="/register">Register</a>
+    </li>
+    <li className="nav-item">
+      <a className="nav-link" href="/login">Login</a>
+    </li>
+  </div>
+</nav>
+
       
       <Routes>
         <Route path="/" element={<HomeComponent />} />
