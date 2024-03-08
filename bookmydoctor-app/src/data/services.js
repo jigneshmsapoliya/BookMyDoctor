@@ -35,4 +35,17 @@ export const services = [
       bgColor: "rgba(151, 113, 255, .2)",
       textColor: "#9771FF",
     },
+
+    {
+      name: "Cardiology",
+      desc: "Specialized care for heart-related conditions. Our hospital's cardiology department offers comprehensive diagnostic and treatment services for heart health.",
+      bgColor: "rgba(255, 99, 132, .2)",
+      textColor: "#FF6384",
+    },
+    {
+      name: "Mental Health",
+      desc: "Holistic mental health services for individuals of all ages. Our hospital's mental health professionals provide counseling, therapy, and support for mental well-being.",
+      bgColor: "rgba(75, 192, 192, .2)",
+      textColor: "#4BBFC0",
+    },  
 ];
