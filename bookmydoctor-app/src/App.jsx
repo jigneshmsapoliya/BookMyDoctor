@@ -5,7 +5,9 @@ import Login from './components/Login';
 import HomeComponent from './components/HomeComponent'; 
 import Services from './components/Services'; 
 import FindADoctor from './components/FindADoctor';
+import Admin from './components/Admin';
 import Footer from './components/Footer';
+import Profile from './components/Profile';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
 
@@ -45,6 +47,8 @@ function Navigation() {
         <Route path="/register" element={<Register />} />
         
         <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin/>}/>
+        <Route path="/doctor/:id" element={<Profile />} />
       </Routes>
       <Footer />
     </Router>
