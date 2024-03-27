@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery,gql } from '@apollo/client';
 import { Card, Form, FormControl, Button, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../node_modules/react-bootstrap/';
@@ -17,8 +17,6 @@ const GET_DOCTORS = gql`
     }
   }
 `;
-
-
 const DoctorCard = ({ doctor }) => {
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
@@ -71,18 +69,14 @@ const Home = () => {
       {data && (
         <Row className="justify-content-center mt-4">
           {filteredDoctors.map((doctor) => (
-            <Col key={doctor.id}>
+            <Col key={doctor._id}>
               <DoctorCard doctor={doctor} />
             </Col>
           ))}
         </Row>
       )}
-
       {!data && !loading && !error && <p>No doctors found.</p>}
     </Container>
-
   );
 };
-
-
 export default Home;

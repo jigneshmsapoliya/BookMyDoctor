@@ -60,6 +60,7 @@ const typeDefs = gql`
     servicesOffered: [String]
     officeHours: OfficeHours
     aboutMe: String
+
   }
   
   type Location {

@@ -16,6 +16,14 @@ nav{
   background-color: lightblue;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {
@@ -26,6 +34,24 @@ nav{
   nav ul{
     display: inline;
   }
+
 }
 
+@media (max-width: 800px) {
+ 
+  .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+}
 
