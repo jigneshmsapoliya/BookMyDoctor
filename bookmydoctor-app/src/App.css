@@ -162,3 +162,190 @@ main{
 #login-btn{
   margin:20px;
 }
+/* doctor details page css */
+.doctor-profile {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  max-width: 70%;
+  padding: 20px;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+}
+
+.doctor-info {
+  /* min-height: 100vh; */
+  max-width: 100%;
+  margin: auto;
+  padding: 2rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.doctor-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.doctor-name {
+  font-size: 2.5vw;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contact-title {
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.contact-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #777;
+  margin-right: 5px;
+}
+
+.contact-value {
+  font-size: 14px;
+  color: #333;
+}
+
+.avtar {
+  display: grid;
+  place-items: center;
+}
+
+.avtar img {
+  width: min(20rem, 90%);
+  border-radius: 20%;
+}
+
+.appointment_button {
+  background-color: #344145;
+  padding: 8px 24px;
+  font-size: 1rem;
+  color: white;
+  border: 2px solid #344145;
+  border-radius: 24px;
+  width: min(20rem);
+  margin: 20px auto;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s; /* Add transition for smoother effect */
+}
+
+.appointment_button:hover {
+  background-color: #4a5a6a; /* Change background color */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  color: #f5f5f5; /* Change text color for contrast */
+}
+
+.doctor-bio {
+  margin-bottom: 20px;
+  padding: 0rem 4rem;
+}
+
+.doctor-bio-title {
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.doctor-bio-text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #777;
+}
+
+.doctor-services {
+  margin: 0px 0px 20px 0px;
+  padding: 0rem 4rem;
+  box-sizing: border-box;
+}
+
+.doctor-services-title {
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.service {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.doctor-office-hours {
+  margin-bottom: 20px;
+  padding: 0rem 4rem;
+}
+
+.doctor-hours-title {
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.office-hours-text {
+  font-size: 16px;
+  color: #777;
+}
+
+.doctor-parking {
+  margin-bottom: 20px;
+  padding: 0rem 4rem;
+}
+
+.doctor-parking-title {
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.parking-info {
+  font-size: 16px;
+  color: #777;
+}
+
+@media (max-width: 750px) {
+ .doctor-profile {
+    max-width: 90%;
+    margin-top: 1rem;
+  }
+ .doctor-info {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 2rem .5rem;
+    gap: 2rem;
+  }
+  .doctor-bio, .doctor-services, .doctor-office-hours, .doctor-parking{
+    padding: 0rem .5rem;
+  }
+  .doctor-name{
+    font-size: 6vw;
+  }
+  .contact-title, .doctor-bio-title,.doctor-services-title,.doctor-hours-title,.doctor-parking-title{
+    font-size: 3.5vw;
+  }
+}

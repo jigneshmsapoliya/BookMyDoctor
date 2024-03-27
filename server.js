@@ -29,6 +29,7 @@ const typeDefs = gql`
   type Query {
     users: [User]
     doctors: [Doctor]
+    doctor(id: ID!): Doctor
   }
 
   type Mutation {
@@ -54,16 +55,12 @@ const typeDefs = gql`
     experience: Int!
     education: [String!]!
     insuranceAccepted: [String!]!
-    rating: Float
-    reviews: [Review!]
     location: Location!
     imgUrl : String
-  }
-  
-  type Review {
-    id: String
-    rating: Int!
-    feedback: String!
+    servicesOffered: [String]
+    officeHours: OfficeHours
+    aboutMe: String
+
   }
   
   type Location {
@@ -71,6 +68,11 @@ const typeDefs = gql`
     city: String!
     state: String!
     country: String!
+  }
+
+  type OfficeHours {
+    hours: String!
+    parking: String
   }
 `;
 
@@ -83,6 +85,18 @@ const resolvers = {
     doctors: async ()=>{
       const doctors = await Doctor.find();
       return doctors;
+    },
+    doctor: async (_, { id }) => {
+      try {
+        const doctor = await Doctor.findById(id);
+        if (!doctor) {
+          throw new Error('Doctor not found');
+        }
+        return doctor;
+      } catch (error) {
+        console.error('Error fetching doctor:', error);
+        throw new Error('Failed to fetch doctor');
+      }
     }
   },
   Mutation: {
@@ -97,9 +111,6 @@ const resolvers = {
       if (!user) {
         throw new Error('Invalid credentials');
       }
-
-     
-
       return user;
     },
   },
