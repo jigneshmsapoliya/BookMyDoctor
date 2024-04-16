@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useQuery, gql } from '@apollo/client';
 import '../App.css'; 
 
@@ -66,8 +66,10 @@ const DoctorDetails = () => {
         </div>
         <div className="avtar">
             <img src={doctor.imgUrl} alt="Doctor avatar" className="doctor-avatar" />
-            <button className='appointment_button' value={"Book Now"}>Book Now</button>
-        </div>
+            
+            <Link to={`/book-appointment/${doctor._id}`} className='custom-button appointment_button'>Book Now</Link>
+
+     </div>
       </div>
       <div className="doctor-bio">
         <h3 className="doctor-bio-title">About Dr.{doctor.firstName}{doctor.lastName}</h3>

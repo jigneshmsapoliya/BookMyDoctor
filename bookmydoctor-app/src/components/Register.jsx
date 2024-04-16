@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { gql } from 'graphql-tag';
 
+
 const REGISTER_USER = gql`
   mutation RegisterUser(
     $email: String!,
@@ -45,7 +46,6 @@ function Register() {
   const [genderError, setGenderError] = useState('');
   const [bloodTypeError, setBloodTypeError] = useState('');
   const [serverError, setServerError] = useState('');
-
   const [registerUser] = useMutation(REGISTER_USER);
 
   const handleRegister = async () => {
@@ -71,6 +71,8 @@ function Register() {
         },
       });
       console.log('User registered:', data.registerUser);
+      
+      window.location.href = '/login'; 
     } catch (error) {
       console.error('Error registering user:', error.message);
       
@@ -125,7 +127,7 @@ function Register() {
     <main>
       <img src="./logo.jpeg" alt="logo image" />
       <div className="register-container">
-        <h1>Registration Page</h1>
+        <h1>Registration</h1>
         <form>
           <div className="registration-container">
             <label>Email:</label>
