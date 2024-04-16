@@ -1,57 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Navbar */
+.navbar {
+  background-color: #343a40; /* Dark background color */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar-brand {
+  color: #ffc107; /* Yellow color for brand */
 }
 
-nav{
-  background-color: lightblue;
+.nav-link {
+  color: #fff; /* White color for links */
+}
+
+.nav-link:hover,
+.logout-button:hover {
+  color: #17a2b8; 
+}
+
+.navbar-nav.ml-auto .nav-item {
+  margin-left: 10px; 
+}
+
+/* Highlight the active link */
+.navbar-nav .nav-item.active .nav-link {
+  font-weight: bold;
+}
+
+.navbar-brand {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+
+/* User section alignment */
+.navbar-nav.ml-auto {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+/* Logout button */
+.navbar-nav.ml-auto .logout-button {
+  background-color: #dc3545; /* Red color for logout button */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-@media (max-width: 600px) {
-  nav{
-    display: flex;
-    flex-direction: column;
-  }
-  nav ul{
-    display: inline;
-  }
-
+.navbar-nav.ml-auto .logout-button:hover {
+  background-color: #c82333; 
 }
 
-@media (max-width: 800px) {
- 
-  .list-unstyled {
-    padding-left: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-}
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.no-slots {
+  color: red;
 }
 
+/* Custom CSS */
+.green-btn {
+  background-color: #28a745; 
+  border-color: #28a745; 
+  color: #fff;
 }
 
+/* Bootstrap Overrides */
+.green-btn:hover {
+  background-color: #218838; /* Darker shade of green on hover */
+  border-color: #1e7e34; /* Darker shade of green for border on hover */
+}

@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
+import { Link } from 'react-router-dom';
+
+
 import '../HomeComponent.css';
 import '../HomeComponent.js';
 
@@ -18,13 +21,14 @@ const GET_DOCTORS = gql`
 const HomeComponent = () => {
   const { loading, error, data } = useQuery(GET_DOCTORS);
   const [faqAnswersVisible, setFaqAnswersVisible] = useState({});
-
+  
   const toggleAnswer = (id) => {
     setFaqAnswersVisible((prevState) => ({
       ...prevState,
       [id]: !prevState[id],
     }));
   };
+  
 
   return (
     <div>
@@ -32,7 +36,7 @@ const HomeComponent = () => {
         <div class="banner-content">
           <h1>Get A Consultation From Your Best Doctor</h1>
           <p>Seek expert advice for your health. Consult with a qualified doctor today. </p>
-          <a href="#" class="btn btn-success">Book Now</a>
+          <Link to="/findadoctor" className="btn btn-primary bg-gradient">Book Now</Link>
         </div>
         <img src="doctor_banner.jpg" alt="Right Banner Image" />
       </div>
@@ -46,7 +50,7 @@ const HomeComponent = () => {
                 <img src={doctor.imgUrl} alt="Doctor 1" />
                 <h3>{doctor.firstName} {doctor.lastName}</h3>
                 <p>Specialist in {doctor.specialization}</p>
-                <button className="card-btn">Know More</button>
+                <Link to={`/doctor/${doctor._id}`} className="card-btn btn btn-primary bg-gradient green-btn">Know More</Link>
               </div>
             </div>
           ))}
